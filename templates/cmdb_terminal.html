@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    cmdb_terminal_v1
+{% endblock %}
+
+{% block style %}
+    <script src="/static/vendor/gateone/gateone.js"></script>
+{% endblock %}
+
+{% block label %}
+    CMDB Terminal v1
+{% endblock %}
+
+{% block content %}
+    <div id="gatenone_container" style="position:relative; width: 60em; height: 30em;">
+        <div id="gateone">
+
+        </div>
+    </div>
+    <script>
+        window.onload(
+            GateOne.init({
+                url:'https://192.168.0.5:443'
+            })
+        )
+    </script>
+{% endblock %}

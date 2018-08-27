@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block style %}
+    <script src="/static/vendor/vue/vue.js"></script>
+{% endblock %}
+
+{% block title %}
+    TestVue
+{% endblock %}
+
+{% block label %}
+    TestVue
+{% endblock %}
+
+
+{% block content %}
+    {% verbatim myblock %}
+        <div id="TestVue">
+            <input type="text" v-model="message">
+            <p v-on:click="ourTest">
+                {{ message }}
+            </p>
+        <ul v-for="project in projects">
+            <li>
+                {{ project.name }}
+            </li>
+        </ul>
+        </div>
+
+        <script>
+            var test = new Vue(
+                {
+                    el:"#TestVue",
+                    data:{
+                        message:"I am Django",
+                        projects:[
+                            {"name": "while"},
+                            {"name": "django"},
+                            {"name": "mk"},
+                            {"name": "test"},
+                            {"name": "josn"}
+                        ]
+                    },
+                    methods:{
+                        ourTest:function () {
+                            alert("hello word")
+                        }
+                    }
+                }
+            )
+        </script>
+    {% endverbatim myblock %}
+{% endblock %}
